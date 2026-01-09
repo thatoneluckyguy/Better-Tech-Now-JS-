@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Cart</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body{
+      text-align: center;
+    }
+  </style>
+  <link rel="shortcut icon" href="./laptop.ico" type="image/x-icon">
+</head>
+<body>
+    <header class="main-header">
+  <div class="header-container">
+    <div class="logo">
+      <h1>💻Better Tech Now💻</h1>
+    </div>
+    <button><a href="index.html">⬅️ Back</a></button>
+  </div>
+</header>
+
+  <div class="showcr">
+    <h2>Cart Items:</h2>
+    <ul id="cart-output"></ul>
+    <p id="total"></p>
+    <button onclick="clearCart()">Clear Cart</button>
+    <a href="./checkout.html"><button style="margin-bottom: 20px;" class="checkoutt">💳Checkout</button></a>
+  </div>
+  
+
+  <script>{
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    function renderCart() {
+      const output = document.getElementById("cart-output");
+      output.innerHTML = "";
+      let total = 0;
+
+      cart.forEach((item, index) => {
+        const li = document.createElement("li");
+        li.innerHTML = `
+          <img width="20%" src="${item.thumbnail}" alt="${item.title}">
+          <br>
+          <strong>${item.title}</strong><br>
+          ${item.price.current} ${item.price.currency}<br>
+          <button onclick="removeItem(${index})">❌ Remove</button>
+        `;
+        output.appendChild(li);
+        total += item.price.current;
+      });
+
+      document.getElementById("total").innerText = 
+        cart.length > 0 
+          ? `🧾 Total: ${total.toFixed(2)} ${cart[0]?.price?.currency || ''}` 
+          : "🛒 Your cart is empty.";
+    }
+
+    function removeItem(index) {
+      cart.splice(index, 1);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      renderCart();
+    }
+
+    function clearCart() {
+      localStorage.removeItem("cart");
+      cart = [];
+      renderCart();
+    }
+
+    renderCart();
+}
+  </script>
+</body>
+</html>
+  

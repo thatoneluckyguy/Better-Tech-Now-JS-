@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Checkout - Better Tech Now</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="./laptop.ico" type="image/x-icon">
+    <style>
+    body{
+      text-align: center;
+    }
+  </style>
+  <style>
+    body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f1f3f6;
+  color: #333;
+}
+
+a{
+  text-decoration: none !important;
+  color: white !important;
+}
+
+.main-header {
+  background-color: #212529;
+  padding: 15px 20px;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  border-bottom: 4px solid #007bff;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo h1 {
+  font-size: 28px;
+  margin: 0;
+  color: #fff;
+}
+
+.search-bar {
+  flex: 1;
+  display: flex;
+  margin: 0 20px;
+  max-width: 500px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 10px 15px;
+  border: 2px solid #007bff;
+  border-radius: 6px 0 0 6px;
+  outline: none;
+  font-size: 14px;
+}
+
+.search-bar button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+  background-color: #0056b3;
+}
+
+.header-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.header-btn {
+  background-color: #007bff;
+  padding: 10px 15px;
+  border-radius: 6px;
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.header-btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.header-btn:active {
+  transform: scale(0.98);
+}
+
+/* Responsive Design */
+@media (max-width: 700px) {
+  .header-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .search-bar {
+    width: 100%;
+    max-width: 90%;
+  }
+}
+
+
+    .checkform {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 450px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    }
+
+    .checkform h2 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #007bff;
+    text-align: center;
+    }
+
+    .checkform form label {
+    display: block;
+    margin-top: 15px;
+    font-weight: 600;
+    color: #333;
+    }
+
+    .checkform form input[type="text"],
+    .checkform form input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+    }
+
+    .checkform form input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+    outline: none;
+    }
+
+    .checkform .submit {
+    background-color: #28a745;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    }
+
+    .checkform .submit:hover {
+    background-color: #218838;
+    }
+
+
+    .footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    background-color: #212529;
+    color: white;
+    font-size: 14px;
+    border-top: 4px solid #007bff;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="main-header">
+  <div class="header-container">
+    <div class="logo">
+      <h1>💻Better Tech Now💻</h1>
+    </div>
+    <button><a href="index.html">⬅️ Back</a></button>
+  </div>
+</header>
+
+<section class="checkform">
+  <h2>Checkout Form</h2>
+  <form id="checkoutForm">
+    <label>Full Name</label>
+    <input type="text" name="fullname" placeholder="John Doe" required>
+
+    <label>Email Address</label>
+    <input type="email" name="email" placeholder="john@example.com" required>
+
+    <label>Phone Number</label>
+    <input type="text" name="phone" placeholder="+1234567890" required>
+
+    <label>Shipping Address</label>
+    <input type="text" name="address" placeholder="123 Main Street, City" required>
+
+    <label>Credit Card Number</label>
+    <input type="text" name="card" placeholder="XXXX XXXX XXXX XXXX" required>
+
+    <label>Expiration Date</label>
+    <input type="text" name="exp" placeholder="MM/YY" required>
+
+    <label>CVV</label>
+    <input type="text" name="cvv" placeholder="123" required>
+
+    <button type="submit" class="submit">Place Order</button>
+  </form>
+</section>
+
+<footer class="footer">
+  <p>&copy; 2025 Better Tech Now. All rights reserved.</p>
+</footer>
+
+<script>
+  document.getElementById('checkoutForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Thank you for your order! 🚚');
+  });
+  
+  document.getElementById('checkoutForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Thank you for your order! 🚚');
+ 
+    setTimeout(function() {
+      window.location.href = 'index.html';
+    }, 1000);
+  });
+</script>
+
+</body>
+</html>
